@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "compression-webpack-plugin": "^10.0.0",
+    "webpack": "^5.x.x",
+    "webpack-bundle-analyzer": "^4.9.1",
+    "webpack-cli": "^4.x.x"
+  },
   "dependencies": {
     "three": "^0.156.1"
   }

@@ -1,0 +1,53 @@
+
+What We're Doing:
+
+We're using a ready-made toolset, or "class," that someone wrote to help us load and manage 3D models. This toolset is called STLModel and it's part of a larger script that organizes how our web page should behave. This larger script is usually called App.js.
+
+How to Use the Toolset:
+
+1. Bringing the Toolset Into Our Project: 
+    Before we can use this STLModel toolset, we have to bring it into our main script (App.js).
+
+    ```javascript
+    import { STLModel } from './application/STLLoader/STLLoader';
+    ```
+
+    📍 This line usually goes at the top of your App.js script.
+
+2. Creating a New 3D Model Object: 
+    We create a new "object" for each 3D model we want to show. Think of this object like a container that holds the 3D model along with some settings like its color.
+
+    ```javascript
+    const scene = new THREE.Scene();  // This sets up the 3D "stage"
+    const caudalMedulla = new STLModel('path/to/caudal-medulla.stl', scene, { color: 0xff0000 });
+    ```
+
+    📍 This piece of code usually goes inside a function that sets up your webpage, often right after setting up the 3D "stage" (the scene).
+
+3. Putting the 3D Model on the Stage: 
+    We have to actually load the 3D model into our 3D stage (scene). This is like putting the actor on the stage in a theater.
+
+    ```javascript
+    caudalMedulla.load()
+      .then(mesh => {
+        console.log('Model loaded:', mesh);
+      })
+      .catch(error => {
+        console.log('Failed to load model:', error);
+      });
+    ```
+
+    📍 This can go right after we create the new 3D model object (the caudalMedulla in our example).
+
+4. Changing the 3D Model’s Looks or Position: 
+    After the model is on the stage, we can change its color or move it around.
+
+    ```javascript
+    caudalMedulla.updateOptions({ color: 0x00ff00, position: { x: 10, y: 0, z: 0 } });
+    ```
+
+    📍 This can go anywhere after the model has been loaded, even inside other functions that react to user actions like clicks or button presses.
+
+Summary:
+
+These pieces of code work together to load a 3D model into a 3D stage on a webpage. They are part of a larger script (App.js) that organizes everything on the webpage. By understanding where each piece goes in App.js, you can control how the 3D model appears and behaves.
