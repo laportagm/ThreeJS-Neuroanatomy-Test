@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    height: 100vh;
+}
+canvas {
+    display: block;
+}
+
+/* Sidebar styles */
+#navSidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    z-index: 100;
+}
+
+.navTab {
+    padding: 16px;
+    cursor: pointer;
+}
+
+.navTab:hover {
+    background-color: #555;
+}
