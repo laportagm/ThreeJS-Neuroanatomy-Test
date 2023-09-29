@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuroanatomy Viewer</title>
+    <style>
+        /* Reset margin for the body and make the canvas a block element */
+        body { margin: 0; font-family: Arial, sans-serif; }
+        canvas { display: block; }
+
+        /* Styling for the legend */
+        #legend {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 4px;
+            z-index: 1; /* To ensure the legend is always on top */
+        }
+        #legend ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #legend li:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Styling for the info panel */
+        #info-panel {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+            z-index: 1; /* To ensure the info panel is always on top */
+        }
+    </style>
+    <!-- Load your JavaScript bundle using type="module" -->
+    <script type="module" crossorigin src="./assets/index.0eb3d6bc.js"></script>
+</head>
+<body>
+    <!-- Legend for your 3D models -->
+    <div id="legend">
+        <ul>
+            <li data-model-name="caudal-medulla">Caudal Medulla</li>
+            <li data-model-name="rostral-medulla">Rostrum Medulla</li>
+            <li data-model-name="midbrain">Midbrain</li>
+            <li data-model-name="pons">Pons</li>
+        </ul>
+    </div>
+    
+    <!-- Info panel to display model information -->
+    <div id="info-panel">
+        <h3 id="info-title">Model Name</h3>
+        <p id="info-description">Detailed information about the model will appear here.</p>
+    </div>
+</body>
+</html>

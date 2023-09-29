@@ -1,0 +1,17 @@
+{
+    "name": "threejs-gltf-template",
+    "version": "1.0.0",
+    "description": "A simple setup for working with Three.js and GLTF models using Vite.",
+    "main": "index.html",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "three": "^0.130.1"
+    },
+    "devDependencies": {
+        "vite": "^2.6.4"
+    }
+}
