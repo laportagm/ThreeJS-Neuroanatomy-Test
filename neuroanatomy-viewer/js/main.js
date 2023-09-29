@@ -1,9 +1,9 @@
 import * as THREE from 'three';
-import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'GLTFLoader';
+import { OrbitControls } from 'OrbitControls';
 
 const scene = new THREE.Scene();
-let camera, renderer, controls, raycaster, mouse, selectedObject, originalMaterial, tooltip, targetPosition, mouseMoveTimeout, pointLight;
+let camera, renderer, controls, raycaster, mouse, selectedObject, originalMaterial, tooltip, targetPosition, mouseMoveTimeout;
 
 init();
 animate();
@@ -13,8 +13,8 @@ function init() {
     scene.background = new THREE.Color(0x1D1F21); // space gray
 
     // Camera setup
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.6, 10000);
-    camera.position.set(0, -55, 15);
+    camera = new THREE.PerspectiveCamera(18, window.innerWidth / window.innerHeight, 0.2, 1000);
+    camera.position.set(0, -275, 305);
 
     // Renderer setup
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -41,12 +41,10 @@ function init() {
 
     // Load 3D models
     loadGLBModels();
-
-    // Listen to mouse move with throttling for performance
-    document.addEventListener('mousemove', throttle(updatePointLightPosition, 16));
 }
-
 function setupControls() {
+    controls.target.set(0, 25, 0);  // Set the target for the controls
+
     controls.enableDamping = true;
     controls.dampingFactor = 0.04;
     controls.screenSpacePanning = true;
@@ -67,7 +65,6 @@ function setupEventListeners() {
     window.addEventListener('resize', onWindowResize, false);
     renderer.domElement.addEventListener('click', onClick, false);
     renderer.domElement.addEventListener('dblclick', onDoubleClick, false);
-    renderer.domElement.addEventListener('mousemove', onMouseMove, false);
 
     const legendItems = document.querySelectorAll('#legend li');
     legendItems.forEach(item => {
@@ -80,33 +77,22 @@ function setupEventListeners() {
 
 function setupLights() {
     // Ambient Light
-    // This acts as a soft light from everywhere, ensuring there are no completely dark parts.
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
 
     // Directional Light 1
-    // Acts as a sun-like source, coming from the top.
     const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.3);
     directionalLight1.position.set(0, 10, 10);
-    directionalLight1.castShadow = true;
+    directionalLight1.castShadow = false;
     scene.add(directionalLight1);
 
     // Directional Light 2
-    // Additional directional light coming from the bottom to balance shadows.
     const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.3);
     directionalLight2.position.set(0, -10, -10);
-    directionalLight2.castShadow = true;
+    directionalLight2.castShadow = false;
     scene.add(directionalLight2);
 
-    // Point Light
-    // This is a light placed at a point in the scene. It shines in all directions and 
-    // can be used to highlight certain parts of a model or scene.
-    pointLight = new THREE.PointLight(0xffffff, 0.5, 500);
-    pointLight.position.set(0, 5, 5);
-    scene.add(pointLight);
-
     // Hemisphere Light
-    // Light positioned above the scene, with color gradients fading from one color to another along the Y-axis.
     const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x404040, 0.1);
     scene.add(hemisphereLight);
 }
@@ -122,28 +108,6 @@ function createTooltip() {
     document.body.appendChild(tooltip);
     return tooltip;
 }
-
-function updatePointLightPosition(event) {
-    const ratioX = event.clientX / window.innerWidth;
-    const ratioY = event.clientY / window.innerHeight;
-
-    pointLight.position.x = ratioX * 100 - 50;  // Range from -50 to 50 on X-axis
-    pointLight.position.y = -(ratioY * 100 - 50);  // Range from -50 to 50 on Y-axis
-}
-
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
 function animate() {
     requestAnimationFrame(animate);
     controls.update();
@@ -181,6 +145,7 @@ function onClick(event) {
     event.preventDefault();
     const intersects = getIntersects(event.clientX, event.clientY);
     handleIntersections(intersects);
+    handleTooltip(intersects, event);
 }
 
 function onDoubleClick(event) {
@@ -189,12 +154,6 @@ function onDoubleClick(event) {
     if (intersects.length > 0) {
         intersects[0].object.visible = !intersects[0].object.visible;
     }
-}
-
-function onMouseMove(event) {
-    event.preventDefault();
-    const intersects = getIntersects(event.clientX, event.clientY);
-    handleTooltip(intersects, event);
 }
 
 function getIntersects(x, y) {
