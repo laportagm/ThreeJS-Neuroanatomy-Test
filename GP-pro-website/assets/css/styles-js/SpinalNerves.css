@@ -1,0 +1,71 @@
+:root {
+  --space-gray: #333333;
+  --light-gray: #555555;
+  --border-color: #666666;
+  --menu-hover-color: #007bff;
+  --menu-bg-color: #f5f5f5;
+  --inner-glow: var(--border-color);
+}
+
+/* Apply styles to the spinal-threejs-container */
+#spinal-threejs-container {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  background-color: #444; /* Container background color */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+  transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+/* Add hover effect to the container */
+#spinal-threejs-container:hover {
+  transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+/* Style the canvas element */
+canvas {
+  width: 100%; /* Make the canvas take the full width of its container */
+  height: auto; /* Allow the height to adjust proportionally */
+  border: 2px solid #333; /* Add a border around the canvas */
+  background-color: #fff; /* Set a background color for the canvas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow for depth */
+}
+
+/* Style the menu-section within the toolbar */
+.menu-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Style the menu labels within the menu-section */
+.threejs-menu-label {
+  font-size: 18px;
+  cursor: pointer;
+  /* Add any other styles you want */
+}
+
+/* Add hover effect to menu labels */
+.threejs-menu-label:hover {
+  color: var(--menu-hover-color); /* Highlight color on hover */
+}
+
+/* Style the icon-section within the toolbar */
+.icon-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Style the menu icons within the icon-section */
+.threejs-menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  /* Add any other styles you want */
+}
+
+/* Add hover effect to menu icons */
+.threejs-menu-icon:hover {
+  color: var(--menu-hover-color); /* Highlight color on hover */
+}

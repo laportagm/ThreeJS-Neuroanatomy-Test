@@ -1,0 +1,27 @@
+// Define Bootstrap variables to override the defaults
+$gray-900: #333333;
+$gray-700: #555555;
+$gray-600: #666666;
+$white-opacity-10: rgba(255, 255, 255, 0.1);
+
+// Define Custom SCSS variables
+$inner-glow: $white-opacity-10;
+
+#threejs-container {
+  // Custom styles
+  background: linear-gradient(135deg, $gray-900 0%, $gray-700 100%);
+  border: 3px solid $gray-600;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px $inner-glow;
+  height: 80vh;
+  width: 100%; // As it's in a centered container, it should take full available width
+  overflow: hidden;
+
+  // Transitions
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  &:hover {
+    border-color: $gray-700;
+    box-shadow: inset 0 0 15px $inner-glow;
+  }
+}
