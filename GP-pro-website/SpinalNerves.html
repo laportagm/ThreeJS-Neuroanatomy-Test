@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+     <title>Neuroanatomy Viewer</title>
+     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png">
+      
+     <!-- Favicons -->
+     <link href="/assets/img/favicon.png" rel="icon">
+     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      
+     <!-- Vendor CSS Files -->
+     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     
+      
+     <!-- Template Main CSS File -->
+     <link href="assets/css/style.css" rel="stylesheet">
+     <link href="assets/css/styles-js/SpinalNerves.css" rel="stylesheet">
+
+     <!--======= Style ======= -->
+
+     <style>
+      /* Hide the info panel by default */
+      .hidden-panel {
+        display: none;
+      }
+              /* Add custom CSS to prevent Bootstrap navbar from capturing mouse events */
+              #spinal-threejs-container.no-pointer-events {
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+<body>
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top header-inner-pages">
+          <div
+            class="container d-flex align-items-center justify-content-lg-between">
+  
+            <h1 class="logo me-auto me-lg-0"><a href="index.html">Gp<span>.</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+            <nav id="navbar" class="navbar order-last order-lg-0">
+              <ul>
+                <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="#Discover">Discover</a></li>
+                <li><a class="nav-link scrollto " href="#Portfolio">Portfolio</a></li>
+                <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                <li class="dropdown"><a href="#"><span>Drop Down</span> <i
+                      class="bi bi-chevron-down"></i></a>
+                  <ul>
+                    <li><a href="CoronalSections.html">Coronal Brain Slab Sections</a></li>
+                    <li class="dropdown"><a href="models.html"><span>Brainstem</span>
+                        <i class="bi bi-chevron-right"></i></a>
+                      <ul>
+                        <li><a href="#">Deep Drop Down 1</a></li>
+                        <li><a href="SpinalNerves.html">Spinal Nerves</a></li>
+                        <li><a href="#">Deep Drop Down 3</a></li>
+                        <li><a href="#">Deep Drop Down 4</a></li>
+                        <li><a href="#">Deep Drop Down 5</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Drop Down 2</a></li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                  </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+  
+            <a href="#about" class="get-started-btn scrollto">Get Started</a>
+  
+          </div>
+        </header><!-- End Header -->
+  
+        <section id="main">
+          <!-- ======= Breadcrumbs ======= -->
+          <section class="breadcrumbs">
+            <div class="container">
+              <div class="d-flex justify-content-between align-items-center">
+                <h2>Neuroanatomy Models</h2>
+                <ol>
+                  <li><a href="index.html">Home</a></li>
+                  <li>Inner Page</li>
+                </ol>
+              </div>
+            </div>
+          </section><!-- End Breadcrumbs -->
+         <div class="inner-page"></div>
+            <style>
+          /* Add this CSS rule to initially hide the info panels */
+          .info-panel {
+            display: none;
+          }
+        </style>
+            <meta class="legend">
+            <ul>
+              <li data-model-name="caudal-medulla">Pending</li>
+              <li data-model-name="rostral-medulla">Pending</li>
+              <li data-model-name="midbrain">Pending</li>
+              <li data-model-name="pons">Pending</li>
+            </ul>
+          </meta>
+  
+          <div id="info-panel">
+            <h3 id="info-title">Model Info</h3>
+            <p id="info-description">Detailed information about the model will
+              appear here.</p>
+          </div>
+  
+          <!-- Additional Info Panels -->
+          <div class="info-panel" data-info-for="caudal-medulla">
+            <h3>Pending</h3>
+            <p>Information About Model.</p>
+          </div>
+  
+          <div class="info-panel" data-info-for="rostral-medulla">
+            <h3>Pending</h3>
+            <p>Information About Model.</p>
+          </div>
+  
+          <div class="info-panel" data-info-for="midbrain">
+            <h3>Pending</h3>
+            <p>Information About Model.</p>
+          </div>
+  
+          <div class="info-panel" data-info-for="pons">
+            <h3>Pending</h3>
+            <p>Information About Model.</p>
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center vh-100">
+            <div id="spinal-threejs-container">
+                <!-- Toolbar -->
+                <nav id="spinal-threejsToolbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">3D Viewer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        File
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownFile">
+                                        <li><a class="dropdown-item1" href="#">Open</a></li>
+                                        <li><a class="dropdown-item2" href="#">Save</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Exit</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="View" href="#">View</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Settings" href="#">Settings</a>
+                                </li>
+                                <li class="nav-item dropdown"> <!-- Updated dropdown menu -->
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHelp" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                         Models
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownHelp">
+                                        <li><a class="dropdown-item" href="page1.html">Item 1</a></li> <!-- Link to HTML page 1 -->
+                                        <li><a class="dropdown-item" href="page2.html">Item 2</a></li> <!-- Link to HTML page 2 -->
+                                        <li><a class="dropdown-item" href="page3.html">Item 3</a></li> <!-- Link to HTML page 3 -->
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="d-flex">
+                                <button id="Expand" class="btn btn-outline-light btn-sm me-2"><i class="fas fa-expand"></i> Expand</button>
+                                <button id="Space" class="btn btn-outline-light btn-sm"><i class="fas fa-space-shuttle"></i> Space</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+    
+        <!-- Add Bootstrap JS and Popper.js scripts at the end of the body -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    
+        <!-- Your custom JavaScript for interactivity -->
+        <script>
+            // JavaScript for handling button clicks or other interactive elements can be added here
+        </script>
+
+<script>
+  // JavaScript for handling Three.js interactions can be added here
+  // Make sure to initialize your Three.js scene and handle user interactions separately from the Bootstrap navbar.
+
+  // Function to toggle fullscreen mode
+  function toggleFullScreen() {
+      const container = document.getElementById("spinal-threejs-container");
+      if (!document.fullscreenElement) {
+          container.requestFullscreen().catch(err => {
+              console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+          });
+      } else {
+          document.exitFullscreen();
+      }
+  }
+
+  // Add an event listener to the "Expand" button to toggle fullscreen on click
+  const expandButton = document.getElementById("Expand");
+  expandButton.addEventListener("click", toggleFullScreen);
+</script>
+    </section>
+      
+      </main><!-- End #main -->
+  
+      <!-- ======= Footer ======= -->
+      <footer id="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+  
+              <div class="col-lg-3 col-md-6">
+                <div class="footer-info">
+                  <h3>I.A<span>.</span></h3>
+                  <p>
+                    Adress Line Here <br>
+                    State Zip Code, Country<br><br>
+                    <strong>Phone:</strong> +1 #### ##### ##<br>
+                    <strong>Email:</strong> info@example.com<br>
+                  </p>
+                  <div class="social-links mt-3">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-lg-2 col-md-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Discover</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of
+                      service</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy
+                      policy</a></li>
+                </ul>
+              </div>
+  
+              <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Our Discover</h4>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Pending 1</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Pending 2</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Pending 3</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Pending 4</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#">Pending 5</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-6 footer-newsletter">
+                <h4>Our Newsletter</h4>
+                <p>**Pending Information** </p>
+                <form action method="post">
+                  <input type="email" name="email"><input type="submit"
+                    value="Subscribe">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>**Pending Information**</span></strong>.
+            All Rights Reserved
+          </div>
+  
+        </div>
+      </footer><!-- End Footer -->
+  
+      <div id="preloader"></div>
+      <a href="#"
+        class="back-to-top d-flex align-items-center justify-content-center"><i
+          class="bi bi-arrow-up-short"></i></a>
+  
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+      
+      <!-- Template Main JS File -->
+      <script type="module" src="dist/js/main.bundle.js"></script>
+    </body>
+</html>
